@@ -17,7 +17,7 @@
     if(params){
       alert('Params');
     }
-    document.getElementById("param").append(params.get("param"));
+    document.getElementById("param").append(params.get("url"));
   </script>
 </head>
 <body>
@@ -39,6 +39,7 @@
   <p id="friendship"><b>isFriendship:</b> </p>
   <p id="scanCode"><b>Code:</b> </p>
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
+  <p id="param"><b>Param:</b> </p>
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
