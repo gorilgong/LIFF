@@ -57,7 +57,7 @@
     }
 
     async function scanCode() {
-      const result = await liff,scanCode()
+      const result = await liff.scanCode()
       document.getElementById("scanCode").append(result.value)
     }
 
@@ -120,7 +120,7 @@
         document.getElementById("btnScanCode").style.display = "none"
         document.getElementById("btnClose").style.display = "none"
       }
-      
+
     }
 
     async function main() {
