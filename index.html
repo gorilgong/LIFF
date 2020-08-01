@@ -9,15 +9,16 @@
 <!--   <script>
     document.write('<link rel="stylesheet" href="css/style.css?cache=?' + new Date().getTime() + '">')
   </script> -->
-  <script>
+
+</head>
+<body>
+    <script>
     // Query Params
     const queryString = decodeURIComponent(window.location.search);
     const params = new URLSearchParams(queryString);
     console.log(params);
     document.getElementById("param").append(params.get('param'));
   </script>
-</head>
-<body>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -57,21 +58,21 @@
   <script src="https://static.line-scdn.net/liff/edge/versions/2.2.0/sdk.js"></script>
   <script>
     function createUniversalLink() {
-      const link1 = liff.permanentLink.createUrl()
-      document.getElementById("universalLink1").append(link1)
+    //   const link1 = liff.permanentLink.createUrl()
+    //   document.getElementById("universalLink1").append(link1)
 
-      liff.permanentLink.setExtraQueryParam('param=9')
-      const link2 = liff.permanentLink.createUrl()
-      document.getElementById("universalLink2").append(link2)
-    }
+    //   liff.permanentLink.setExtraQueryParam('param=9')
+    //   const link2 = liff.permanentLink.createUrl()
+    //   document.getElementById("universalLink2").append(link2)
+    // }
 
-    async function shareMsg() {
-      await liff.shareTargetPicker([
-      {
-        "type" : "text",
-        "text" : "this message was sent by shareTargetPicker"
-      }
-      ])
+    // async function shareMsg() {
+    //   await liff.shareTargetPicker([
+    //   {
+    //     "type" : "text",
+    //     "text" : "this message was sent by shareTargetPicker"
+    //   }
+    //   ])
     }
 
     function logOut() {
