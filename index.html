@@ -54,7 +54,7 @@
     const params = new URLSearchParams(queryString);
     if(params.get('url')){
      document.getElementById("param").append(params.get('url'));
-     const url = window.location.hostname + '/' + params.get('url');
+     const url = params.get('url');
      window.location.href = url;
    }
  </script>
