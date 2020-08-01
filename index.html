@@ -55,7 +55,7 @@
     if(params.get('url')){
      document.getElementById("param").append(params.get('url'));
      const url = window.location.hostname + '/' + params.get('url');
-     window.location.replace(url);
+     window.location.href(url);
    }
  </script>
  <script src="https://static.line-scdn.net/liff/edge/versions/2.2.0/sdk.js"></script>
