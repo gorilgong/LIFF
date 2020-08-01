@@ -12,7 +12,7 @@
 
 </head>
 <body>
-   
+ 
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -31,7 +31,7 @@
   <p id="friendship"><b>isFriendship:</b> </p>
   <p id="scanCode"><b>Code:</b> </p>
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
-   <p id="param"><b>Param:</b> </p>
+  <p id="param"><b>Param:</b> </p>
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
@@ -48,16 +48,19 @@
     var vConsole = new VConsole()
     console.log("Hello World!")
   </script> -->
-   <script>
+  <script>
     // Query Params
     const queryString = decodeURIComponent(window.location.search);
     const params = new URLSearchParams(queryString);
-    console.log(params);
-    document.getElementById("param").append(params.get('param'));
-  </script>
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.2.0/sdk.js"></script>
-  <script>
-    function createUniversalLink() {
+    if(params.get('url')){
+     document.getElementById("param").append(params.get('url'));
+     const url = window.location.hostname + '/' + params.get('url');
+     window.location.replace(url);
+   }
+ </script>
+ <script src="https://static.line-scdn.net/liff/edge/versions/2.2.0/sdk.js"></script>
+ <script>
+  function createUniversalLink() {
     //   const link1 = liff.permanentLink.createUrl()
     //   document.getElementById("universalLink1").append(link1)
 
@@ -73,19 +76,19 @@
     //     "text" : "this message was sent by shareTargetPicker"
     //   }
     //   ])
-    }
+  }
 
-    function logOut() {
-      liff.logout()
-      window.location.reload()
-    }
+  function logOut() {
+    liff.logout()
+    window.location.reload()
+  }
 
-    function closed() {
-      liff.closeWindow()
-    }
+  function closed() {
+    liff.closeWindow()
+  }
 
-    async function scanCode() {
-      alert('scancode!');
+  async function scanCode() {
+    alert('scancode!');
       // const result = await liff.scanCode()
       // console.log(result);
       //document.getElementById("scanCode").append(result.value)
