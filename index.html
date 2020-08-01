@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!--   <script>
+    document.write('<link rel="stylesheet" href="css/style.css?cache=?' + new Date().getTime() + '">')
+  </script> -->
+  <script>
+    // Query Params
+    const queryString = decodeURIComponent(window.location.search);
+    const params = new URLSearchParams(queryString);
+    if(params){
+      alert('Params');
+    }
+    document.getElementById("param").append(params.get("param"));
+  </script>
 </head>
 <body>
   <p id="os"><b>OS:</b> </p>
@@ -35,13 +49,12 @@
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
-
+<!-- 
   <script src="js/vconsole.min.js"></script>
   <script>
     var vConsole = new VConsole()
     console.log("Hello World!")
-    errorPlease()
-  </script>
+  </script> -->
 
   <script src="https://static.line-scdn.net/liff/edge/versions/2.2.0/sdk.js"></script>
   <script>
