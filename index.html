@@ -60,12 +60,19 @@
     }
 
     function openWindow() {
+      liff.openWindow({
+        url: "https://marketingican.com",
+        external: true
+      })
     }
 
     async function getFriendship() {
     }
 
     async function sendMsg() {
+      //maximum 5 bubbles at a time
+      //send as a user not an admin
+      //should add Botlink before launch the LIFF
       if(liff.getContext().type !== "none"){
         await liff.sendMessages([
         {
